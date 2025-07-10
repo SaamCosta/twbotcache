@@ -1,0 +1,15 @@
+{
+  "endpoint": "https://br135.tribalwars.com.br/game.php",
+  "server": "br135",
+  "cookies": {
+    "cid": "1084215168",
+    "toggler_embedmap_village": "1",
+    "br_auth": "24d1438fa4ee:93eadd5936f8c96599d654b9f023f32d1ab76143cba315c94e9454cca0a81a6a",
+    "farm": "81",
+    "sid": "0%3A6431b40c33b01e839484e94ae979b9f3e551dd047111b737317c7a96cc4f4a5cba807a220f4acaac36384e118275c4828fadc5f9b13bd23892afbb105919ff3c",
+    "global_village_id": "88879",
+    "websocket_available": "true",
+    "popup_pos_snob_existing": "631.953125x431.046875",
+    "io": "iytwPkYIWSsR-IkhD9nI"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "name": "P\u00e3\u00f5 004",
+  "public": {
+    "id": "90313",
+    "name": "P\u00e3\u00f5 004",
+    "location": [
+      636,
+      305
+    ],
+    "bonus": null,
+    "points": 8327,
+    "safe": false,
+    "scout": false,
+    "tribe": "331",
+    "owner": "5955651",
+    "buildings": {},
+    "resources": {}
+  },
+  "resources": {
+    "wood": 147901,
+    "stone": 89122,
+    "iron": 147036,
+    "pop": 2739
+  },
+  "required_resources": {
+    "building": {
+      "wood": 0,
+      "stone": 187379,
+      "iron": 0
+    }
+  },
+  "available_troops": {},
+  "buidling_levels": {
+    "main": 20,
+    "barracks": 5,
+    "stable": 18,
+    "garage": 0,
+    "watchtower": 18,
+    "snob": 1,
+    "smith": 20,
+    "place": 1,
+    "statue": 1,
+    "market": 10,
+    "wood": 30,
+    "stone": 29,
+    "iron": 29,
+    "farm": 30,
+    "storage": 29,
+    "hide": 1,
+    "wall": 20
+  },
+  "building_queue": [
+    "watchtower:19",
+    "watchtower:20",
+    "farm:28",
+    "wall:14",
+    "wood:30",
+    "stone:30",
+    "iron:30",
+    "storage:30",
+    "farm:29",
+    "wall:15",
+    "farm:30",
+    "wall:16",
+    "wall:17",
+    "wall:18",
+    "wall:19",
+    "wall:20"
+  ],
+  "troops": {
+    "spear": 0,
+    "sword": 0,
+    "axe": 0,
+    "spy": 0,
+    "light": 0,
+    "heavy": 0,
+    "ram": 0,
+    "catapult": 0,
+    "knight": 0,
+    "snob": 0,
+    "militia": 0
+  },
+  "under_attack": false,
+  "last_run": 1752112325
+}

@@ -1,0 +1,99 @@
+{
+  "name": "P\u00e3o 007",
+  "public": {
+    "id": "87510",
+    "name": "P\u00e3o 007",
+    "location": [
+      624,
+      306
+    ],
+    "bonus": [
+      "bonus de 100% na produ\u00e7\u00e3o de argila",
+      "bonus/stone.png"
+    ],
+    "points": 8243,
+    "safe": false,
+    "scout": false,
+    "tribe": "331",
+    "owner": "5955651",
+    "buildings": {},
+    "resources": {}
+  },
+  "resources": {
+    "wood": 20016,
+    "stone": 62034,
+    "iron": 57878,
+    "pop": 0
+  },
+  "required_resources": {
+    "snob": {
+      "stone": 0,
+      "wood": 0
+    },
+    "building": {
+      "pop": 20,
+      "wood": 71400,
+      "stone": 64347
+    },
+    "recruitment_spear": {
+      "wood": 0,
+      "stone": 0,
+      "iron": 0
+    },
+    "recruitment_sword": {
+      "wood": 0,
+      "stone": 0,
+      "iron": 0
+    }
+  },
+  "available_troops": {
+    "spy": "1000",
+    "light": "61",
+    "ram": "30"
+  },
+  "buidling_levels": {
+    "main": 21,
+    "barracks": 24,
+    "stable": 18,
+    "garage": 10,
+    "watchtower": 0,
+    "snob": 1,
+    "smith": 20,
+    "place": 1,
+    "statue": 1,
+    "market": 21,
+    "wood": 29,
+    "stone": 29,
+    "iron": 28,
+    "farm": 29,
+    "storage": 28,
+    "hide": 0,
+    "wall": 20
+  },
+  "building_queue": [
+    "farm:30",
+    "stable:20",
+    "garage:10",
+    "market:20",
+    "wood:30",
+    "stone:30",
+    "iron:30",
+    "storage:30",
+    "barracks:25"
+  ],
+  "troops": {
+    "spear": 3857,
+    "sword": 4590,
+    "axe": 150,
+    "spy": 1000,
+    "light": 498,
+    "heavy": 800,
+    "ram": 30,
+    "catapult": 0,
+    "knight": 0,
+    "snob": 0,
+    "militia": 0
+  },
+  "under_attack": false,
+  "last_run": 1752113328
+}

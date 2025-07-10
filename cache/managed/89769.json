@@ -1,0 +1,76 @@
+{
+  "name": "Pao 002",
+  "public": {
+    "id": "89769",
+    "name": "Pao 002",
+    "location": [
+      638,
+      309
+    ],
+    "bonus": [
+      "bonus de 30% na produ\u00e7\u00e3o de recursos (todos os recursos)",
+      "bonus/all.png"
+    ],
+    "points": 9809,
+    "safe": false,
+    "scout": false,
+    "tribe": "331",
+    "owner": "5955651",
+    "buildings": {},
+    "resources": {}
+  },
+  "resources": {
+    "wood": 54574,
+    "stone": 11201,
+    "iron": 252901,
+    "pop": 8082
+  },
+  "required_resources": {
+    "snob": {
+      "stone": 14149
+    }
+  },
+  "available_troops": {
+    "axe": "111",
+    "spy": "32",
+    "light": "296",
+    "ram": "106",
+    "knight": "1",
+    "snob": "2"
+  },
+  "buidling_levels": {
+    "main": 20,
+    "barracks": 25,
+    "stable": 20,
+    "garage": 10,
+    "watchtower": 0,
+    "snob": 1,
+    "smith": 20,
+    "place": 1,
+    "statue": 1,
+    "market": 20,
+    "wood": 30,
+    "stone": 30,
+    "iron": 30,
+    "farm": 30,
+    "storage": 30,
+    "hide": 0,
+    "wall": 20
+  },
+  "building_queue": [],
+  "troops": {
+    "spear": 0,
+    "sword": 0,
+    "axe": 6571,
+    "spy": 1000,
+    "light": 1135,
+    "heavy": 150,
+    "ram": 150,
+    "catapult": 0,
+    "knight": 1,
+    "snob": 2,
+    "militia": 0
+  },
+  "under_attack": false,
+  "last_run": 1752112078
+}
