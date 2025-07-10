@@ -1,0 +1,19 @@
+{
+  "id": "100931",
+  "name": "0043 # S h o g u n",
+  "location": [
+    653,
+    287
+  ],
+  "bonus": [
+    "bonus de 100% na produ\u00e7\u00e3o de argila",
+    "bonus/stone.png"
+  ],
+  "points": 4907,
+  "safe": false,
+  "scout": false,
+  "tribe": "37",
+  "owner": "919308506",
+  "buildings": {},
+  "resources": {}
+}

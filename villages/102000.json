@@ -1,0 +1,19 @@
+{
+  "id": "102000",
+  "name": "0034 # S h o g u n",
+  "location": [
+    656,
+    285
+  ],
+  "bonus": [
+    "B\u00f4nus de 33% no tempo de recrutamento no est\u00e1bulo",
+    "bonus/stable.png"
+  ],
+  "points": 5140,
+  "safe": false,
+  "scout": false,
+  "tribe": "37",
+  "owner": "919308506",
+  "buildings": {},
+  "resources": {}
+}

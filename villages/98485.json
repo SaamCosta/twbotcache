@@ -1,0 +1,19 @@
+{
+  "id": "98485",
+  "name": "026 Nobre, full or fake?",
+  "location": [
+    672,
+    322
+  ],
+  "bonus": [
+    "B\u00f4nus de 33% no tempo de recrutamento no quartel",
+    "bonus/barracks.png"
+  ],
+  "points": 1061,
+  "safe": false,
+  "scout": false,
+  "tribe": "103",
+  "owner": "5440856",
+  "buildings": {},
+  "resources": {}
+}

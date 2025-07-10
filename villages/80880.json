@@ -1,0 +1,19 @@
+{
+  "id": "80880",
+  "name": "027 A Carnificina",
+  "location": [
+    610,
+    317
+  ],
+  "bonus": [
+    "50% de mais capacidade de armazenamento e comerciantes",
+    "bonus/storage.png"
+  ],
+  "points": 2106,
+  "safe": false,
+  "scout": false,
+  "tribe": "331",
+  "owner": "919906897",
+  "buildings": {},
+  "resources": {}
+}
