@@ -1,0 +1,19 @@
+{
+  "id": "93699",
+  "name": 0,
+  "location": [
+    647,
+    304
+  ],
+  "bonus": [
+    "B\u00f4nus de 33% no tempo de recrutamento no quartel",
+    "bonus/barracks.png"
+  ],
+  "points": 616,
+  "safe": false,
+  "scout": false,
+  "tribe": null,
+  "owner": "0",
+  "buildings": {},
+  "resources": {}
+}

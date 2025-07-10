@@ -1,0 +1,19 @@
+{
+  "id": "81249",
+  "name": 0,
+  "location": [
+    625,
+    337
+  ],
+  "bonus": [
+    "Bonus de 100% na produ\u00e7\u00e3o de ferro",
+    "bonus/iron.png"
+  ],
+  "points": 821,
+  "safe": false,
+  "scout": false,
+  "tribe": null,
+  "owner": "0",
+  "buildings": {},
+  "resources": {}
+}

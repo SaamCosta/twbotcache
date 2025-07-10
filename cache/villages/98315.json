@@ -1,0 +1,19 @@
+{
+  "id": "98315",
+  "name": 0,
+  "location": [
+    635,
+    286
+  ],
+  "bonus": [
+    "bonus de 100% na produ\u00e7\u00e3o de madeira",
+    "bonus/wood.png"
+  ],
+  "points": 673,
+  "safe": false,
+  "scout": false,
+  "tribe": null,
+  "owner": "0",
+  "buildings": {},
+  "resources": {}
+}

@@ -1,0 +1,19 @@
+{
+  "id": "92938",
+  "name": "NM-bonus",
+  "location": [
+    655,
+    308
+  ],
+  "bonus": [
+    "bonus de 30% na produ\u00e7\u00e3o de recursos (todos os recursos)",
+    "bonus/all.png"
+  ],
+  "points": 7201,
+  "safe": false,
+  "scout": false,
+  "tribe": "331",
+  "owner": "919160940",
+  "buildings": {},
+  "resources": {}
+}

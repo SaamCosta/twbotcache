@@ -1,0 +1,19 @@
+{
+  "id": "94176",
+  "name": "012- Teobaldo in Dark",
+  "location": [
+    679,
+    331
+  ],
+  "bonus": [
+    "bonus de 10% na popula\u00e7\u00e3o",
+    "bonus/farm.png"
+  ],
+  "points": 4104,
+  "safe": false,
+  "scout": false,
+  "tribe": "37",
+  "owner": "6352466",
+  "buildings": {},
+  "resources": {}
+}

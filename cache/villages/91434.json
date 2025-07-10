@@ -1,0 +1,19 @@
+{
+  "id": "91434",
+  "name": "A Boa",
+  "location": [
+    678,
+    338
+  ],
+  "bonus": [
+    "bonus de 100% na produ\u00e7\u00e3o de argila",
+    "bonus/stone.png"
+  ],
+  "points": 2102,
+  "safe": false,
+  "scout": false,
+  "tribe": "1322",
+  "owner": "919722381",
+  "buildings": {},
+  "resources": {}
+}
