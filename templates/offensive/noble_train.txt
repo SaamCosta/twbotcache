@@ -1,0 +1,13 @@
+{
+    "village":"any",
+    "groups": [
+        {
+            "units": {
+                "axe": 100,
+                "light": 50,
+                "snob": 1
+            },
+            "await": false
+        }
+    ]
+}

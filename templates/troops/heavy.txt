@@ -1,0 +1,37 @@
+[{
+    "building": "barracks",
+    "level": 5,
+    "build": {
+      "barracks": {
+        "spear": 0,
+        "sword": 0,
+        "archer": 0
+      },
+      "stable": {
+        "spy": 0,
+        "light": 0
+       }
+      },
+    "farm": [
+        {"light": 0}
+    ]
+},
+{
+    "building": "barracks",
+    "level": 15,
+    "build": {
+      "barracks": {
+        "spear": 0,
+        "sword": 0,
+        "archer": 0
+      },
+      "stable": {
+        "spy": 0,
+        "light": 0,
+        "heavy": 1500
+       }
+      },
+    "farm": [
+        {"light": 0}
+    ]
+}]
