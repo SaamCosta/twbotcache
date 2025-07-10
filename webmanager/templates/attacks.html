@@ -1,0 +1,211 @@
+{% extends "main.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h2>Attack Planner & Conquest</h2>
+        <p>Configure automatic village conquests and manage manual attack plans. This feature will automatically send clearing armies and nobles to conquer targeted villages.</p>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col-12">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" role="tab" data-toggle="tab" href="#auto_conquest">Automatic Conquest</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" role="tab" data-toggle="tab" href="#manual_targets">Manual Targets</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" role="tab" data-toggle="tab" href="#status">Conquest Status</a>
+          </li>
+        </ul>
+    </div>
+</div>
+
+<div class="row border border-top-0 p-3">
+    <div class="tab-content col-12">
+        <!-- Automatic Conquest Tab -->
+        <div role="tabpanel" class="tab-pane container active show" id="auto_conquest">
+            <h4>Automatic Conquest Settings</h4>
+            <p><i>The bot will automatically find and conquer villages within the specified radius and point range. Requires nobles to be available.</i></p>
+            <form class="form-vertical">
+                <div class="form-group">
+                    <label>Automatic Conquest</label>
+                    <button type="button" class="btn {% if config.conquest.enabled %}btn-success{% else %}btn-danger{% endif %}" data-type="toggle" data-type-option="conquest.enabled">{% if config.conquest.enabled %}Enabled{% else %}Disabled{% endif %}</button>
+                </div>
+                <div class="form-group">
+                    <label for="radius">Search Radius</label>
+                    <input type="number" class="form-control" id="radius" data-type="number" data-type-option="conquest.radius" value="{{ config.conquest.radius }}">
+                </div>
+                <div class="form-group">
+                    <label for="min_points">Min. Target Points</label>
+                    <input type="number" class="form-control" id="min_points" data-type="number" data-type-option="conquest.min_points" value="{{ config.conquest.min_points }}">
+                </div>
+                 <div class="form-group">
+                    <label for="max_points">Max. Target Points</label>
+                    <input type="number" class="form-control" id="max_points" data-type="number" data-type-option="conquest.max_points" value="{{ config.conquest.max_points }}">
+                </div>
+                 <div class="form-group">
+                    <label for="max_concurrent">Max. Concurrent Conquests</label>
+                    <input type="number" class="form-control" id="max_concurrent" data-type="number" data-type-option="conquest.max_concurrent_conquests" value="{{ config.conquest.max_concurrent_conquests }}">
+                </div>
+                <div class="form-group">
+                     <label>Target Types</label>
+                     <div class="form-check">
+                        <button type="button" class="btn btn-sm {% if config.conquest.target_barbarians %}btn-success{% else %}btn-danger{% endif %}" data-type="toggle" data-type-option="conquest.target_barbarians">{% if config.conquest.target_barbarians %}Barbarians{% else %}No Barbarians{% endif %}</button>
+                     </div>
+                     <div class="form-check mt-2">
+                        <button type="button" class="btn btn-sm {% if config.conquest.target_inactive_players %}btn-success{% else %}btn-danger{% endif %}" data-type="toggle" data-type-option="conquest.target_inactive_players">{% if config.conquest.target_inactive_players %}Inactive Players{% else %}No Inactive Players{% endif %}</button>
+                     </div>
+                </div>
+                <button id="save_config_auto" class="btn btn-success disabled">Save Automatic Settings</button>
+            </form>
+        </div>
+
+        <!-- Manual Targets Tab -->
+        <div role="tabpanel" class="tab-pane container fade" id="manual_targets">
+            <h4>Manual Conquest Targets</h4>
+            <p><i>Specify exact village coordinates to conquer. Assign targets to your villages that have nobles.</i></p>
+
+            {% set configured_villages = data.config.villages.items() %}
+            {% for village_id, village in configured_villages if village.snobs > 0 %}
+            <h5>{{ data.bot[village_id].public.name }} ({{ village_id }})</h5>
+            <table class="table table-sm table-striped">
+                <thead><tr><th>Target Coordinate</th><th>Action</th></tr></thead>
+                <tbody>
+                    {% for target in village.conquest_targets %}
+                    <tr>
+                        <td>{{ target }}</td>
+                        <td><button class="btn btn-danger btn-sm" onclick="remove_target('{{village_id}}', '{{target}}')">Remove</button></td>
+                    </tr>
+                    {% else %}
+                    <tr><td colspan="2">No manual targets for this village.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <form class="form-inline mb-3" onsubmit="add_target('{{village_id}}'); return false;">
+                <input type="text" class="form-control mr-2" id="target_coord_{{village_id}}" placeholder="e.g. 500|501">
+                <button type="submit" class="btn btn-primary">Add Target</button>
+            </form>
+            {% else %}
+              <p>No villages configured to build nobles. Set "snobs" to a value greater than 0 in a village's configuration to enable conquest from it.</p>
+            {% endfor %}
+        </div>
+        
+        <!-- Conquest Status Tab -->
+        <div role="tabpanel" class="tab-pane container fade" id="status">
+             <h4>Ongoing Conquests</h4>
+             <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>From Village</th>
+                        <th>Target</th>
+                        <th>Status</th>
+                        <th>Est. Time of Arrival</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {# Example of what the backend could provide #}
+                    {% for conquest in data.conquests %}
+                    <tr>
+                        <td>{{ conquest.from_village_name }} ({{ conquest.from_village_id }})</td>
+                        <td>{{ conquest.target_coord }}</td>
+                        <td><span class="badge badge-info">{{ conquest.stage }}</span></td>
+                        <td>{{ conquest.eta }}</td>
+                        <td><button class="btn btn-danger btn-sm">Cancel</button></td>
+                    </tr>
+                    {% else %}
+                    <tr><td colspan="5" class="text-center">No active conquests.</td></tr>
+                    {% endfor %}
+                </tbody>
+             </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    var set_values = {};
+
+	function set_config(parameter, value, village_id) {
+	    var url = "/app/config/set?parameter="+encodeURIComponent(parameter)+"&value="+encodeURIComponent(value);
+	    if(village_id) {
+	        url += "&village_id=" + village_id;
+	    }
+		$.getJSON(url, function(data){
+			console.log("Set value:", parameter, value, "for village:", village_id || 'global');
+		});
+	}
+
+	function set_toggle_value(target, value) {
+		if(!value) {
+			target.removeClass("btn-success").addClass("btn-danger");
+			let currentText = target.text();
+			if (currentText.includes("Enabled")) { target.text("Disabled"); }
+			else if (currentText.includes("Barbarians")) { target.text("No Barbarians"); }
+			else if (currentText.includes("Inactive Players")) { target.text("No Inactive Players"); }
+		} else {
+			target.addClass("btn-success").removeClass("btn-danger");
+			let currentText = target.text();
+			if (currentText.includes("Disabled")) { target.text("Enabled"); }
+			else if (currentText.includes("No Barbarians")) { target.text("Barbarians"); }
+			else if (currentText.includes("No Inactive Players")) { target.text("Inactive Players"); }
+		}
+	}
+
+    // These list modification functions are illustrative. 
+    // A full implementation requires backend support to modify the JSON config file.
+	function add_target(village_id) {
+        var coord_input = $('#target_coord_' + village_id);
+        var new_coord = coord_input.val();
+        if (!new_coord.match(/^\d{1,3}\|\d{1,3}$/)) {
+            alert('Invalid coordinate format. Use xxx|yyy.');
+            return;
+        }
+        alert("This UI action requires backend implementation to modify the config file. Adding target " + new_coord + " for village " + village_id + ".");
+        // A real call might look like:
+        // $.post('/app/config/add_to_list', { village_id: village_id, parameter: 'conquest_targets', value: new_coord }, function() { location.reload(); });
+	}
+
+    function remove_target(village_id, target_coord) {
+         alert("This UI action requires backend implementation to modify the config file. Removing target " + target_coord + " from village " + village_id + ".");
+         // A real call might look like:
+         // $.post('/app/config/remove_from_list', { village_id: village_id, parameter: 'conquest_targets', value: target_coord }, function() { location.reload(); });
+    }
+
+
+	$( document ).ready(function() {
+		$( "[data-type=toggle]" ).click(function(e) {
+		    var target = $(e.currentTarget);
+            var name = target.attr("data-type-option");
+            if(name === undefined) { alert("Error setting target"); return; }
+            var current_value = target.hasClass("btn-success");
+            var next_value = !current_value;
+            set_config(name, next_value);
+            set_toggle_value(target, next_value);
+		});
+
+		$( "[data-type=number]" ).on('change keyup paste', function(e) {
+		    var target = $(e.currentTarget);
+            var name = target.attr("data-type-option");
+            if(name === undefined) { alert("Error setting target"); return; }
+            set_values[name] = parseInt(target.val());
+            $('#save_config_auto').removeClass('disabled');
+		});
+
+		$('#save_config_auto').click(function(e){
+		  e.preventDefault();
+		  $.each(set_values, function(set_key, set_value){
+		    set_config(set_key, set_value);
+		  });
+		  $('#save_config_auto').addClass('disabled');
+		  alert("Settings saved! Reloading page...");
+		  setTimeout(function(){location.reload()}, 500);
+		});
+	});
+</script>
+{% endblock %}
